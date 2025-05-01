@@ -26,3 +26,27 @@ rl.question("How would you rate your day from 1 to 10? ", (input) => {
 
   rl.close();
 });
+
+
+// index.js
+ 
+// Import Express
+const express = require('express');
+const app = express();
+const port = 3000;
+ 
+// Welcome route
+app.get('/', (req, res) => {
+  res.send(`
+<h1>Welcome to Rate Anything!</h1>
+<h2>Your opinion finally has a home.</h2>
+<p>From burgers to books, apps to art — if it exists, you can rate it.<br>
+    Discover, review, and share your takes on everything around you.<br>
+    One platform, infinite opinions.</p>
+  `);
+});
+ 
+// Start server
+app.listen(port, () => {
+  console.log(`✅ Rate Anything server running at http://localhost:${port}`);
+});
